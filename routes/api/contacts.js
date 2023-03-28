@@ -17,4 +17,4 @@ router.delete('/:contactId', ctrl.removeContact);
 
 router.put('/:contactId', validateMiddleware, ctrl.updateContact);
 
-module.exports = router
+module.exports = router;
