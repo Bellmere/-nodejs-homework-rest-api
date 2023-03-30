@@ -50,8 +50,7 @@ const updateContact = async (contactId, body) => {
     return null;
   }
   contacts[idx] = {...contacts[idx], ...body, id: contactId};
-  console.log(contacts[idx]);
-  await fs.writeFile(contactsPath, JSON.stringify(contacts));
+  await fs.writeFile(contactsPath, JSON.stringify(contacts, null, 4));
   return contacts[idx];
 }
 
