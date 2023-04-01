@@ -1,13 +1,13 @@
 const express = require('express');
 
 const { validateBody } = require('../../middlewares');
-const { joiSchema, favoriteJoiSchema } = require('../../models/contact');
+const { joiSchema, favoriteJoiSchema } = require('../../utils/validation/contact/ValidationSchemas');
 const { contacts: ctrl } = require('../../controllers/');
-const {listContacts, getContactById, addContact, removeContact, updateContact, updateFavorite} = ctrl;
+const {getContacts, getContactById, addContact, removeContact, updateContact, updateFavorite} = ctrl;
 
 const router = express.Router()
 
-router.get('/', listContacts);
+router.get('/', getContacts);
 
 router.get('/:contactId', getContactById);
 
